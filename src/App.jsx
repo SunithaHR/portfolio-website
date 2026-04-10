@@ -305,9 +305,16 @@ function App() {
               <div className={`text-sm bg-gradient-to-r ${project.color} bg-clip-text text-transparent font-medium mb-3`}>
                 {project.category}
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-cyan-300 transition-colors duration-300">
-                {project.title}
-              </h3>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline"
+              >
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-cyan-300 transition-colors duration-300">
+                  {project.title}
+                </h3>
+              </a>
             </div>
             <div className={`relative w-14 h-14 rounded-xl bg-gradient-to-r ${project.color} flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500`}>
               {project.icon}
@@ -352,15 +359,7 @@ function App() {
   );
 
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-featured online shopping platform with real-time inventory, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
-      features: ["Real-time updates", "Payment integration", "Admin dashboard", "Inventory management"],
-      color: "from-cyan-500 to-blue-500",
-      icon: <ShoppingBag className="w-6 h-6" />,
-      category: "Full Stack"
-    },
+
     {
       title: "Task Management App",
       description: "Collaborative task management application with real-time updates, notifications, and team collaboration.",
@@ -368,17 +367,37 @@ function App() {
       features: ["Real-time collaboration", "Team management", "Notifications", "Analytics"],
       color: "from-purple-500 to-pink-500",
       icon: <CheckSquare className="w-6 h-6" />,
-      category: "Web Application"
+      category: "Web Application",
+      link: "https://task-management-dun-tau.vercel.app/login"
+
     },
-    {
-      title: "Weather Dashboard",
-      description: "Real-time weather monitoring dashboard with interactive maps, forecasts, and historical data analysis.",
-      tech: ["React", "D3.js", "Weather API", "Chart.js"],
-      features: ["Real-time data", "Interactive maps", "Forecast charts", "Location tracking"],
-      color: "from-orange-500 to-yellow-500",
-      icon: <BarChart className="w-6 h-6" />,
-      category: "Data Visualization"
-    },
+  {
+  title: "QuickBite – Food Ordering App",
+  description: "A full-stack food ordering web application with user authentication, dynamic cart, order placement, and real-time order management.",
+  tech: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "Tailwind CSS"],
+  features: [
+    "User authentication",
+    "Add to cart & dynamic pricing",
+    "Order placement & history",
+    "REST API integration",
+    "Responsive UI",
+    "Order confirmation animations"
+  ],
+  color: "from-orange-500 to-red-500",
+  icon: <BarChart className="w-6 h-6" />,
+  category: "Full Stack",
+  link: "https://quickbite-wine.vercel.app/"
+},
+    // {
+    //   title: "E-Commerce Platform",
+    //   description: "Full-featured online shopping platform with real-time inventory, payment processing, and admin dashboard.",
+    //   tech: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
+    //   features: ["Real-time updates", "Payment integration", "Admin dashboard", "Inventory management"],
+    //   color: "from-cyan-500 to-blue-500",
+    //   icon: <ShoppingBag className="w-6 h-6" />,
+    //   category: "Full Stack",
+    //   link: ""
+    // },
   ];
 
   return (
